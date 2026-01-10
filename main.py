@@ -1,7 +1,7 @@
 import random
 
 computer_choice = random.randint(1, 100)
-number_of_guesses = 1 
+number_of_guesses = 0
 print(computer_choice)
 while True:
     try:
@@ -9,10 +9,11 @@ while True:
     except ValueError:
         print('Please enter a number.')
         continue
-    if user_input <= 0:
+    if user_input <= 0 or user_input > 100:
         print('Please enter a number between 1 and 100.')
     elif user_input == computer_choice:
-        print(f'Congratulations! You guessed the number in {number_of_guesses} attempt{'s' if number_of_guesses != 1 else ''}.')
+        number_of_guesses += 1 
+        print(f"Congratulations! You guessed the number in {number_of_guesses} attempt{'s' if number_of_guesses != 1 else ''}.")
         break
     elif user_input > computer_choice:
         print('Too high! Try again.')
