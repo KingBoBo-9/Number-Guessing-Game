@@ -2,9 +2,13 @@ import random
 
 computer_choice = random.randint(1, 100)
 number_of_guesses = 1 
-
+print(computer_choice)
 while True:
-    user_input = int(input("Guess the number (between 1 and 100): "))
+    try:
+        user_input = int(input("Guess the number (between 1 and 100): "))
+    except ValueError:
+        print("Please enter a number.")
+        continue
     if user_input == computer_choice:
         print(f"Congratulations! You guessed the number in {number_of_guesses} attempts.")
         break
