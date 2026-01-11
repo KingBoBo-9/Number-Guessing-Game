@@ -33,7 +33,8 @@ while True:
             best_score = number_of_guesses
             print('New best score!')
         print(f"The current best score is {best_score} guess{'es' if best_score != 1 else ''}.")
-        break
+        number_of_guesses = 0
+        continue
     elif user_input > computer_choice:
         print("Too high! Try again.")
     elif user_input < computer_choice:
